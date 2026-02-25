@@ -42,3 +42,4 @@ plt.title(f"Population Over Time — {country}")
 plt.xlabel("Year")
 plt.ylabel("Population (millions)")
 plt.show()
+```

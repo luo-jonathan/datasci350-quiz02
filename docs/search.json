@@ -32,7 +32,7 @@
     "href": "life-gdp.html#load-data",
     "title": "Life Expectancy and GDP per Capita",
     "section": "Load data",
-    "text": "Load data\nimport pandas as pd import matplotlib.pyplot as plt\ngap = pd.read_csv(“gapminder.csv”) gap.head()\nyears = sorted(gap[“year”].unique())\nplt.figure() for yr in years: d = gap[gap[“year”] == yr] plt.scatter(d[“gdp_per_capita”], d[“life_expectancy”], label=str(yr), alpha=0.4)\nplt.title(“Life Expectancy vs GDP per Capita (1952–2007)”) plt.xlabel(“GDP per Capita”) plt.ylabel(“Life Expectancy”) plt.xscale(“log”) plt.legend(bbox_to_anchor=(1.05, 1), loc=“upper left”, title=“Year”) plt.tight_layout() plt.show()"
+    "text": "Load data\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ngap = pd.read_csv(\"gapminder.csv\")\ngap.head()\n\nyears = sorted(gap[\"year\"].unique())\n\nplt.figure()\nfor yr in years:\n    d = gap[gap[\"year\"] == yr]\n    plt.scatter(d[\"gdp_per_capita\"], d[\"life_expectancy\"], label=str(yr), alpha=0.4)\n\nplt.title(\"Life Expectancy vs GDP per Capita (1952–2007)\")\nplt.xlabel(\"GDP per Capita\")\nplt.ylabel(\"Life Expectancy\")\nplt.xscale(\"log\")\nplt.legend(bbox_to_anchor=(1.05, 1), loc=\"upper left\", title=\"Year\")\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "country.html",
@@ -53,7 +53,7 @@
     "href": "country.html#load-data",
     "title": "Country Analysis",
     "section": "Load data",
-    "text": "Load data\nimport pandas as pd import matplotlib.pyplot as plt\ngap = pd.read_csv(“gapminder.csv”) gap.head()\ncountry = “United States” country_data = gap[gap[“country”] == country].sort_values(“year”)\ncountry_data[[“country”,“year”,“life_expectancy”,“gdp_per_capita”,“population_millions”]].head()\nyears = country_data[“year”]\nplt.figure() plt.plot(years, country_data[“life_expectancy”], marker=“o”) plt.title(f”Life Expectancy Over Time — {country}“) plt.xlabel(”Year”) plt.ylabel(“Life Expectancy”) plt.show()\nplt.figure() plt.plot(years, country_data[“gdp_per_capita”], marker=“o”) plt.title(f”GDP per Capita Over Time — {country}“) plt.xlabel(”Year”) plt.ylabel(“GDP per Capita”) plt.show()\nplt.figure() plt.plot(years, country_data[“population_millions”], marker=“o”) plt.title(f”Population Over Time — {country}“) plt.xlabel(”Year”) plt.ylabel(“Population (millions)”) plt.show()"
+    "text": "Load data\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ngap = pd.read_csv(\"gapminder.csv\")\ngap.head()\n\ncountry = \"United States\"\ncountry_data = gap[gap[\"country\"] == country].sort_values(\"year\")\n\ncountry_data[[\"country\",\"year\",\"life_expectancy\",\"gdp_per_capita\",\"population_millions\"]].head()\n\nyears = country_data[\"year\"]\n\nplt.figure()\nplt.plot(years, country_data[\"life_expectancy\"], marker=\"o\")\nplt.title(f\"Life Expectancy Over Time — {country}\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"Life Expectancy\")\nplt.show()\n\nplt.figure()\nplt.plot(years, country_data[\"gdp_per_capita\"], marker=\"o\")\nplt.title(f\"GDP per Capita Over Time — {country}\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"GDP per Capita\")\nplt.show()\n\nplt.figure()\nplt.plot(years, country_data[\"population_millions\"], marker=\"o\")\nplt.title(f\"Population Over Time — {country}\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"Population (millions)\")\nplt.show()"
   },
   {
     "objectID": "index.html",
@@ -88,6 +88,6 @@
     "href": "life-population.html#load-data",
     "title": "Life Expectancy and Population",
     "section": "Load data",
-    "text": "Load data\nimport pandas as pd import matplotlib.pyplot as plt\ngap = pd.read_csv(“gapminder.csv”) gap.head()\nyears = sorted(gap[“year”].unique())\nplt.figure() for yr in years: d = gap[gap[“year”] == yr] plt.scatter(d[“population_millions”], d[“life_expectancy”], label=str(yr), alpha=0.4)\nplt.title(“Life Expectancy vs Population (1952–2007)”) plt.xlabel(“Population (millions)”) plt.ylabel(“Life Expectancy”) plt.legend(bbox_to_anchor=(1.05, 1), loc=“upper left”, title=“Year”) plt.tight_layout() plt.show()"
+    "text": "Load data\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ngap = pd.read_csv(\"gapminder.csv\")\ngap.head()\n\nyears = sorted(gap[\"year\"].unique())\n\nplt.figure()\nfor yr in years:\n    d = gap[gap[\"year\"] == yr]\n    plt.scatter(d[\"population_millions\"], d[\"life_expectancy\"], label=str(yr), alpha=0.4)\n\nplt.title(\"Life Expectancy vs Population (1952–2007)\")\nplt.xlabel(\"Population (millions)\")\nplt.ylabel(\"Life Expectancy\")\nplt.legend(bbox_to_anchor=(1.05, 1), loc=\"upper left\", title=\"Year\")\nplt.tight_layout()\nplt.show()"
   }
 ]
