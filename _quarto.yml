@@ -19,3 +19,8 @@ format:
   html:
     theme: cosmo
     toc: true
+
+execute:
+  echo: true
+
+jupyter: python3
